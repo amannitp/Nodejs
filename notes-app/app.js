@@ -1,4 +1,4 @@
-const fs=require('fs')
+//const fs=require('fs')
 //fs.writeFileSync('note.txt','this file is  created by node js ')
 //fs.writeFileSync('note.txt','this file is again created by node js ')  // replace existed text
 
@@ -25,6 +25,33 @@ const fs=require('fs')
 // //console.log(name)
 
 
-const getNotes=require('./utils.js')
+// const getNotes=require('./utils.js')
 
-getNotes()
+// getNotes()
+
+// const getsNotes=require("./notes.js")
+// getsNotes()
+
+//const validator =require('validator')
+
+// console.log(validator.isEmail("amannitp@gmail.com"))
+// console.log(validator.isEmail("amannitpgmail.com"))
+// console.log(validator.isURL('https://www.npmjs.com/package/validator'))
+//console.log(validator)
+
+import fs from 'fs'
+//console.log(fs)
+
+
+import validator from 'validator'
+//console.log(validator)
+
+import chalk from 'chalk'
+//console.log(chalk)
+
+console.log(chalk.bold.green('success'))
+console.log(chalk.red('error'))
+console.log(chalk.bold.yellow('warning'))
+console.log(chalk.bgRed(" Hello world"))
+console.log(chalk.bgGray('background gray'))
+
