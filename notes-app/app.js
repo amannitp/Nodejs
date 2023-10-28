@@ -85,13 +85,18 @@ if(input==='add'){
 //     console.log(data[i])
 // }
 // console.log(data)
-import yargs from 'yargs'
-yargs.command({
-    command:"add",
-    description:" add a new notes",
-    handler:function(){
-        console.log(" Adding a new notes")
-    }
-})
+// import yargs from 'yargs'
+// yargs.command({
+//     command:"add",
+//     description:" add a new notes",
+//     handler:function(){
+//         console.log(" Adding a new notes")
+//     }
+// })
 
-console.log(yargs.argv)
+// console.log(yargs.argv)
+
+import notes from './notes.js'
+
+notes.createsNotes();
+notes.addNotes(chalk.green("Nightangle"),chalk.red("Ruskin Bond"))
