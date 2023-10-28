@@ -49,9 +49,49 @@ import validator from 'validator'
 import chalk from 'chalk'
 //console.log(chalk)
 
-console.log(chalk.bold.green('success'))
-console.log(chalk.red('error'))
-console.log(chalk.bold.yellow('warning'))
-console.log(chalk.bgRed(" Hello world"))
-console.log(chalk.bgGray('background gray'))
+// console.log(chalk.bold.green('success'))
+// console.log(chalk.red('error'))
+// console.log(chalk.bold.yellow('warning'))
+// console.log(chalk.bgRed(" Hello world"))
+// console.log(chalk.bgGray('background gray'))
 
+
+
+// take input from commondline 
+
+// console.log(process.argv)
+// console.log(process.argv[2])
+
+const input=process.argv[2]
+
+if(input==='add'){
+    console.log('Notes are added')
+}else if(input==='remove'){
+    console.log(" Notes are removed")
+}
+
+
+// import yargsParser from 'yargs-parser'
+
+// console.log(yargsParser)
+
+ 
+// yargs.version('1.0.0')
+// console.log(yargs.argv)
+
+// const data=[...process.argv]
+
+// for(let i=2;i<data.length;i++){
+//     console.log(data[i])
+// }
+// console.log(data)
+import yargs from 'yargs'
+yargs.command({
+    command:"add",
+    description:" add a new notes",
+    handler:function(){
+        console.log(" Adding a new notes")
+    }
+})
+
+console.log(yargs.argv)
