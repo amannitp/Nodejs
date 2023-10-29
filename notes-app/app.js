@@ -96,7 +96,10 @@ if(input==='add'){
 
 // console.log(yargs.argv)
 
+const tittle=process.argv[2];
+const author=process.argv[3];
+
 import notes from './notes.js'
 
 notes.createsNotes();
-notes.addNotes(chalk.green("Nightangle"),chalk.red("Ruskin Bond"))
+notes.addNotes(tittle,author);
