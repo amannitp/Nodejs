@@ -6,12 +6,24 @@ function createsNotes(){
 
 function addNotes(tittle,author){
     const notes=loadNotes()
-     notes.push({
-        tittle:tittle,
-        author:author
-    })
+   
+   
+        const duplicate=notes.filter((note)=>{
+            return note.tittle===tittle
+        })
+        if(duplicate.length===0){
+            notes.push({
+                tittle:tittle,
+                author:author
+            })
+            saveNotes(notes)
+            console.log("NEW Notes added successfully")
+        }else{
+            console.log("Tittle is already taken!")
+        } 
 
-    saveNotes(notes)
+    
+   
     
 }
 
@@ -22,16 +34,16 @@ function saveNotes(notes){
 
 
 function loadNotes(){
-    try{
-        const dataBuffer=fs.readFileSync('notes.json');
-        const dataJSON=dataBuffer.toString();
-        return JSON.parse(dataJSON);
 
-    }catch(error){
-        console.log(error);
-        return []
-    }
-   
+try {
+  const bufferData=fs.readFileSync('notes.json');
+  const jsonData=bufferData.toString();
+  return JSON.parse(jsonData)
+} catch (error) {
+  return []
+
+}
+
 
 }
 export default {createsNotes,addNotes};
