@@ -103,3 +103,9 @@ import notes from './notes.js'
 
 notes.createsNotes();
 notes.addNotes(tittle,author);
+
+
+
+if(process.argv[4]==='remove'){
+   notes.removeNote(tittle);
+}
