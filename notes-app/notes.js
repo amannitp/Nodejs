@@ -7,9 +7,7 @@ function createsNotes() {
 function addNotes(tittle, author) {
   const notes = loadNotes();
 
-  const duplicate = notes.filter((note) => {
-    return note.tittle === tittle;
-  });
+  const duplicate = notes.filter((note) =>note.tittle === tittle);
   if (duplicate.length === 0) {
     notes.push({
       tittle: tittle,
@@ -40,9 +38,7 @@ function loadNotes() {
 
 const removeNote=function(tittle){
     const notes=loadNotes();
-    const notesToKeep=notes.filter((note)=>{
-        return note.tittle!==tittle;
-    })
+    const notesToKeep=notes.filter((note)=>note.tittle!==tittle)
     
     if(notes.length > notesToKeep.length){
         console.log(chalk.green(" Notes are remove successfully"))
