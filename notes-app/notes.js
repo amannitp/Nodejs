@@ -1,14 +1,18 @@
 import fs from "fs";
 import chalk from "chalk";
-function createsNotes() {
+const createsNotes=()=> {
   console.log(" Notes are created successfully");
 }
 
-function addNotes(tittle, author) {
+const addNotes=(tittle, author)=> {
   const notes = loadNotes();
+  debugger
 
-  const duplicate = notes.filter((note) =>note.tittle === tittle);
-  if (duplicate.length === 0) {
+
+
+  const duplicates = notes.filter((note) =>note.tittle === tittle);
+  const duplicate = notes.find((note) =>note.tittle === tittle);
+  if (duplicates.length === 0) {
     notes.push({
       tittle: tittle,
       author: author,
@@ -20,12 +24,12 @@ function addNotes(tittle, author) {
   }
 }
 
-function saveNotes(notes) {
+const saveNotes=(notes) =>{
   const dataJSON = JSON.stringify(notes);
   fs.writeFileSync("notes.json", dataJSON);
 }
 
-function loadNotes() {
+const loadNotes=()=> {
   try {
     const bufferData = fs.readFileSync("notes.json");
     const jsonData = bufferData.toString();
@@ -36,13 +40,14 @@ function loadNotes() {
 }
 
 
-const removeNote=function(tittle){
+const removeNote=(tittle)=>{
     const notes=loadNotes();
-    const notesToKeep=notes.filter((note)=>note.tittle!==tittle)
+    const notesToKeeps=notes.filter((note)=>note.tittle!==tittle)
+    const notesToKeep=notes.find((note)=>note.tittle!==tittle)
     
-    if(notes.length > notesToKeep.length){
+    if(notes.length > notesToKeeps.length){
         console.log(chalk.green(" Notes are remove successfully"))
-        saveNotes(notesToKeep)
+        saveNotes(notesToKeeps)
     }else{
         console.log(chalk.red(" Notes are not remove"))
     }
