@@ -1,0 +1,11 @@
+h1{
+    background-color: aqua;
+    font-size: 40px;
+    padding: 10px;
+}
+
+button{
+    padding: 10px;
+    background-color: brown;
+    color:white;
+}
